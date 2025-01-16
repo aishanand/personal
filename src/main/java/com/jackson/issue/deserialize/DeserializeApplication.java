@@ -20,7 +20,10 @@ public class DeserializeApplication {
 
     }
 
-
+     /***
+     * Prints the json string for the {@link com.jackson.issue.deserialize.dto.FruitDTO}
+     * 
+     */
     private static String getFruitJsonString() throws JsonProcessingException {
 
         SmellDTO smellDTO = new SmellDTO();
