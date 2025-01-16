@@ -13,7 +13,7 @@ public class DeserializeApplication {
     public static void main(String[] args) throws JsonProcessingException {
 
         //final String jsonString = getFruitJsonString();
-        String fruitJson = "{\"name\":null,\"flavorDTO\":{\"color\":\"yellow\",\"taste\":\"sweet\",\"smell\":{\"smellsGood\":true}}}";
+        String fruitJson = "{\"name\":\"apple\",\"flavorDTO\":{\"color\":\"yellow\",\"taste\":\"sweet\",\"smell\":{\"smellsGood\":true}}}";
         ObjectMapper mapper = new ObjectMapper();
         FruitDTO fruitDTO = mapper.convertValue(fruitJson, FruitDTO.class);
         System.out.println(fruitDTO.toString());
@@ -33,6 +33,7 @@ public class DeserializeApplication {
 
         FruitDTO fruitDTO = new FruitDTO();
         fruitDTO.setFlavorDTO(flavorDTO);
+        fruitDTO.setName("apple");
 
         ObjectMapper objectMapper = new ObjectMapper();
 
