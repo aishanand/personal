@@ -15,8 +15,13 @@ public class DeserializeApplication {
         //final String jsonString = getFruitJsonString();
         String fruitJson = "{\"name\":\"apple\",\"flavorDTO\":{\"color\":\"yellow\",\"taste\":\"sweet\",\"smell\":{\"smellsGood\":true}}}";
         ObjectMapper mapper = new ObjectMapper();
-        FruitDTO fruitDTO = mapper.convertValue(fruitJson, FruitDTO.class);
-        System.out.println(fruitDTO.toString());
+
+        // this works beautifully
+        FruitDTO fruitDTO = mapper.readValue(fruitJson, FruitDTO.class);
+        System.out.println("readValue worked ! "+fruitDTO.toString());
+
+        FruitDTO convertFruitDTO = mapper.convertValue(fruitJson, FruitDTO.class);
+        System.out.println("covertValue fails ! "+convertFruitDTO.toString());
 
     }
 
